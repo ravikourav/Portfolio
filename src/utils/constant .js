@@ -36,18 +36,16 @@ const skills = [
 
 const projects = [
   {
-    id: 1,
     title: "Ink&Muse",
     image: "/inkandmuse.png",
     liveLink: "https://inkandmuse.vercel.app",
     techStack: ["React", "Tailwind CSS", "Node.js", "MongoDB"],
   },
   {
-    id: 2,
     title: "Selllin",
     image: "/selllin.png",
     liveLink: "https://selllin.com",
-    techStack: ["Next.js", "Tailwind CSS", "Stripe API", "MongoDB"],
+    techStack: ["Next.js", "Tailwind CSS", "Node.js", "MongoDB"],
   },
 ];
 

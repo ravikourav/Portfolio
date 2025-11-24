@@ -1,6 +1,5 @@
 import { useState } from "react";
 import HeroImg from "../assets/hero-img.jpg";
-import { motion } from "motion/react";
 import { Icon } from "@iconify/react";
 import Skill from "../components/Skill";
 import { skills, projects } from "../utils/constant ";
@@ -14,7 +13,7 @@ function Home() {
       {/* HERO SECTION */}
       <section
         id="home"
-        className="flex flex-1 w-full min-h-[750px]  justify-evenly items-center bg-linear-to-b from-white bg-amber-100"
+        className="flex flex-col-reverse md:flex-row w-full min-h-[750px] px-10 justify-center items-center bg-linear-to-b from-white bg-amber-100"
       >
         <div className="space-y-2 max-w-lg">
           <p className="text-2xl">Hi, I'm</p>
@@ -38,7 +37,7 @@ function Home() {
           </div>
         </div>
 
-        <div className="w-64 h-64 bg-gray-200 rounded-full overflow-hidden">
+        <div className="m-10 md:mx-20 w-40 h-40 sm:w-48 sm:h-48 lg:w-56 lg:h-56 rounded-full overflow-hidden shrink-0 mb-6 lg:mb-0">
           <img
             src={HeroImg}
             alt="Profile-Picture"
@@ -92,8 +91,8 @@ function Home() {
 
         <div className="flex flex-wrap justify-center items-center gap-12 max-w-6xl w-full px-6">
           {projects.map((project) => (
-            <motion.a
-              key={project.id}
+            <a
+              key={project.title}
               href={project.liveLink}
               target="_blank"
               rel="noopener noreferrer"
@@ -114,7 +113,7 @@ function Home() {
               <div className="p-2 text-center">
                 <h3 className="text-lg font-semibold mb-2">{project.title}</h3>
               </div>
-            </motion.a>
+            </a>
           ))}
         </div>
       </section>
@@ -122,64 +121,62 @@ function Home() {
       {/* CONTACT SECTION */}
       <section
         id="contact"
-        className="w-full py-24 bg-linear-to-b from-amber-100 to-white flex justify-center items-start px-6"
+        className="w-full py-24 bg-linear-to-b from-amber-100 to-white flex justify-center items-start px-10"
       >
-        <div className="max-w-6xl w-full grid grid-cols-1 md:grid-cols-2 gap-12">
-          <motion.div
+        <div className="gap-12">
+          <div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
-            className="flex flex-col justify-center space-y-6"
+            className="flex flex-col justify-center items-center text-center"
           >
-            <h2 className="text-4xl font-bold mb-4">Contact Info</h2>
+            <h2 className="text-3xl font-semibold mb-4">Contact</h2>
             <p className="text-gray-700 text-lg">
               Feel free to get in touch, I’d love to hear from you.
             </p>
 
             <div className="flex space-y-3 mt-2">
               <a
-                href="https://github.com/yourusername"
+                href="https://github.com/ravikourav"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-800 hover:text-gray-900 transition text-2xl"
               >
-                <Icon icon="mdi:github" width="40" height="40" />
+                <Icon icon="mdi:github" width="32" height="32" />
               </a>
 
               <a
-                href="https://linkedin.com/in/yourusername"
+                href="https://linkedin.com/in/ravikourav"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-800 hover:text-blue-600 transition text-2xl"
               >
-                <Icon icon="mdi:linkedin" width="40" height="40" />
+                <Icon icon="mdi:linkedin" width="32" height="32" />
               </a>
             </div>
-          </motion.div>
+          </div>
 
-          <motion.form
+          <form
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
-            className="bg-white rounded-3xl shadow-2xl p-10 sm:p-12 space-y-6"
+            className="bg-white w-[400px] rounded-3xl shadow-2xl p-6 space-y-2"
           >
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-              <div className="flex flex-col">
-                <label className="text-sm text-gray-600 mb-2">Your Name</label>
-                <input
-                  type="text"
-                  placeholder="Enter your name"
-                  className="p-2 rounded-xl border border-gray-200 focus:ring-2 focus:ring-amber-400 outline-none transition"
-                />
-              </div>
-              <div className="flex flex-col">
-                <label className="text-sm text-gray-600 mb-2">Your Email</label>
-                <input
-                  type="email"
-                  placeholder="Enter your email"
-                  className="p-2 rounded-xl border border-gray-200 focus:ring-2 focus:ring-amber-400 outline-none transition"
-                />
-              </div>
+            <div className="flex flex-col max-w-2xl">
+              <label className="text-sm text-gray-600 mb-2">Your Name</label>
+              <input
+                type="text"
+                placeholder="Enter your name"
+                className="p-2 rounded-xl border border-gray-200 focus:ring-2 focus:ring-amber-400 outline-none transition"
+              />
+            </div>
+            <div className="flex flex-col">
+              <label className="text-sm text-gray-600 mb-2">Your Email</label>
+              <input
+                type="email"
+                placeholder="Enter your email"
+                className="p-2 rounded-xl border border-gray-200 focus:ring-2 focus:ring-amber-400 outline-none transition"
+              />
             </div>
 
             <div className="flex flex-col">
@@ -191,14 +188,14 @@ function Home() {
               ></textarea>
             </div>
 
-            <motion.button
+            <button
               whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.97 }}
-              className="w-full bg-(--brand-primary)  text-white p-4 rounded-xl font-semibold shadow-md hover:bg-(--brand-primary-dark) transition"
+              className="w-full mt-4 bg-(--brand-primary)  text-white p-2 rounded-xl font-semibold shadow-md hover:bg-(--brand-primary-dark) transition"
             >
               Send Message
-            </motion.button>
-          </motion.form>
+            </button>
+          </form>
         </div>
       </section>
     </div>
