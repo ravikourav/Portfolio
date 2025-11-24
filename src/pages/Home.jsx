@@ -160,7 +160,7 @@ function Home() {
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
-            className="bg-white w-[400px] rounded-3xl shadow-2xl p-6 space-y-2"
+            className="bg-white rounded-3xl shadow-2xl p-6 space-y-2"
           >
             <div className="flex flex-col max-w-2xl">
               <label className="text-sm text-gray-600 mb-2">Your Name</label>
