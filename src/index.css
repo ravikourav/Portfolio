@@ -1,0 +1,27 @@
+@import "tailwindcss";
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 65px;
+}
+
+:root {
+  /* Brand colors */
+  --brand-primary: #f59e0b; /* Amber 500 */
+  --brand-primary-dark: #d97706; /* Amber 600 */
+  --brand-accent: #fbbf24; /* Amber 400 */
+
+  /* Text colors */
+  --text-main: #111827; /* Gray 900 */
+  --text-soft: #374151; /* Gray 700 */
+  --text-subtle: #9ca3af; /* Gray 400 */
+
+  /* Surface / backgrounds */
+  --surface-base: #ffffff;
+  --surface-light: #f9fafb;
+  --surface-soft: #f3f4f6;
+
+  /* Neutral */
+  --black: #000000;
+  --white: #ffffff;
+}
