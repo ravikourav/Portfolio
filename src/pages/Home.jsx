@@ -10,11 +10,11 @@ function Home() {
   const [activeCategory, setActiveCategory] = useState("All");
 
   return (
-    <div>
+    <div className="bg-amber-100">
       {/* HERO SECTION */}
       <section
         id="home"
-        className="flex flex-1 w-full min-h-[650px] justify-evenly items-center bg-gray-50"
+        className="flex flex-1 w-full min-h-[750px]  justify-evenly items-center bg-linear-to-b from-white bg-amber-100"
       >
         <div className="space-y-2 max-w-lg">
           <p className="text-2xl">Hi, I'm</p>
@@ -50,7 +50,7 @@ function Home() {
       {/* SKILLS SECTION */}
       <section
         id="tech-stack"
-        className="w-full py-10 bg-white flex flex-col items-center"
+        className="w-full py-10 bg-linear-to-b from-amber-100 via-white to-white flex flex-col items-center"
       >
         <h2 className="text-3xl font-semibold mb-8">Skills</h2>
 
@@ -86,7 +86,7 @@ function Home() {
       {/* PROJECTS SECTION */}
       <section
         id="projects"
-        className="w-full pt-10 pb-15 bg-gray-50 flex flex-col items-center"
+        className="w-full pt-10 pb-15 bg-linear-to-b from-white to-amber-100 flex flex-col items-center"
       >
         <h2 className="text-3xl font-semibold mb-8">Projects</h2>
 
@@ -122,7 +122,7 @@ function Home() {
       {/* CONTACT SECTION */}
       <section
         id="contact"
-        className="w-full py-24 bg-linear-to-br from-amber-100 to-white flex justify-center items-start px-6"
+        className="w-full py-24 bg-linear-to-b from-amber-100 to-white flex justify-center items-start px-6"
       >
         <div className="max-w-6xl w-full grid grid-cols-1 md:grid-cols-2 gap-12">
           <motion.div
@@ -194,7 +194,7 @@ function Home() {
             <motion.button
               whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.97 }}
-              className="w-full bg-black text-white p-4 rounded-xl font-semibold shadow-md hover:bg-gray-900 transition"
+              className="w-full bg-(--brand-primary)  text-white p-4 rounded-xl font-semibold shadow-md hover:bg-(--brand-primary-dark) transition"
             >
               Send Message
             </motion.button>
