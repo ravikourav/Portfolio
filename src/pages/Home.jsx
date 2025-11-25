@@ -45,15 +45,40 @@ function Home() {
             curiosity and continuous learning, I strive to deliver work that is
             both practical and impactful.
           </p>
-          <div className="pt-4 pb-3">
-            <a
-              href="/Resume.pdf"
-              download="Ravi-Kourav-Resume.pdf"
-              className="bg-(--brand-primary) text-white px-4 py-2 rounded-lg hover:bg-(--brand-primary-dark) transition"
+          <div className="flex gap-4 items-center">
+            <motion.div
+              whileHover={{ scale: 1.03 }}
+              whileTap={{ scale: 0.97 }}
+              transition={{ type: "spring", stiffness: 300, damping: 20 }}
+              className="pt-4 pb-3"
             >
-              Download Resume
-            </a>
-            <div></div>
+              <a
+                href="/Resume.pdf"
+                download="Ravi-Kourav-Resume.pdf"
+                className="bg-(--brand-primary) text-white px-4 py-2 rounded-lg hover:bg-(--brand-primary-dark) transition"
+              >
+                Download Resume
+              </a>
+            </motion.div>
+            <div className="flex space-x-2 mt-2">
+              <a
+                href="https://github.com/ravikourav"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-800 hover:text-orange-500 transition text-2xl"
+              >
+                <Icon icon="mdi:github" width="32" height="32" />
+              </a>
+
+              <a
+                href="https://linkedin.com/in/ravikourav"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-800 hover:text-blue-600 transition text-2xl"
+              >
+                <Icon icon="mdi:linkedin" width="32" height="32" />
+              </a>
+            </div>
           </div>
         </motion.div>
 
@@ -299,7 +324,8 @@ function Home() {
             <motion.button
               whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.97 }}
-              className="w-full mt-4 bg-(--brand-primary)  text-white p-2 rounded-xl font-semibold shadow-md hover:bg-(--brand-primary-dark) transition"
+              transition={{ type: "spring", stiffness: 300, damping: 20 }}
+              className="w-full mt-4 bg-(--brand-primary)  text-white p-2 rounded-xl font-semibold shadow-md hover:bg-(--brand-primary-dark)"
             >
               Send Message
             </motion.button>
