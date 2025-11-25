@@ -55,7 +55,7 @@ function Home() {
               <a
                 href="/Resume.pdf"
                 download="Ravi-Kourav-Resume.pdf"
-                className="bg-(--brand-primary) text-white px-4 py-2 rounded-lg hover:bg-(--brand-primary-dark) transition"
+                className="bg-(--brand-primary) corner-squircle rounded-[50px] text-white px-4 py-2 hover:bg-(--brand-primary-dark) transition"
               >
                 Download Resume
               </a>
@@ -85,6 +85,7 @@ function Home() {
         <motion.div
           initial={{ opacity: 0, x: 40 }}
           whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.8 }}
           className="m-10 md:mx-20 w-40 h-40 sm:w-48 sm:h-48 lg:w-56 lg:h-56 rounded-full overflow-hidden shrink-0 mb-6 lg:mb-0"
         >
@@ -104,7 +105,7 @@ function Home() {
         <motion.h2
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ amount: 0.3 }}
+          viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.7, ease: "easeOut" }}
           className="text-3xl font-semibold mb-8"
         >
@@ -121,7 +122,7 @@ function Home() {
             <button
               key={cat}
               onClick={() => setActiveCategory(cat)}
-              className={`px-4 py-2 rounded-lg transition ${
+              className={`px-4 py-2 corner-squircle rounded-[50px] transition ${
                 activeCategory === cat
                   ? "bg-(--brand-primary) text-white"
                   : "bg-gray-200 text-gray-700 hover:bg-gray-300"
@@ -157,7 +158,7 @@ function Home() {
         <motion.h2
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ amount: 0.3 }}
+          viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.7, ease: "easeOut" }}
           className="text-3xl font-semibold mb-8"
         >
@@ -184,7 +185,7 @@ function Home() {
               }}
               transition={{ type: "spring", stiffness: 150, damping: 12 }}
               whileHover={{ y: -8, scale: 1.02 }}
-              className="max-w-[350px] bg-white rounded-3xl shadow-lg hover:shadow-2xl cursor-pointer overflow-hidden group"
+              className="max-w-[350px] bg-white corner-squircle rounded-[60px] shadow-lg hover:shadow-2xl cursor-pointer overflow-hidden group"
             >
               <div className="w-full h-60 sm:h-64 lg:h-72 overflow-hidden relative p-2">
                 <img
@@ -245,7 +246,7 @@ function Home() {
         <motion.h2
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ amount: 0.3 }}
+          viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.7, ease: "easeOut" }}
           className="text-3xl font-semibold mb-4"
         >
@@ -293,31 +294,31 @@ function Home() {
               stiffness: 150,
               damping: 12,
             }}
-            className="bg-white rounded-3xl shadow-2xl p-6 space-y-2"
+            className="bg-white corner-squircle rounded-[60px] shadow-2xl p-6 space-y-2"
           >
             <div className="flex flex-col max-w-2xl">
-              <label className="text-sm text-gray-600 mb-2">Your Name</label>
+              <label className="text-sm text-gray-600 mb-1">Your Name</label>
               <input
                 type="text"
                 placeholder="Enter your name"
-                className="p-2 rounded-xl border border-gray-200 focus:ring-2 focus:ring-amber-400 outline-none transition"
+                className="p-2 corner-squircle rounded-[50px] border border-gray-200 focus:ring-2 focus:ring-amber-400 outline-none transition"
               />
             </div>
             <div className="flex flex-col">
-              <label className="text-sm text-gray-600 mb-2">Your Email</label>
+              <label className="text-sm text-gray-600 mb-1">Your Email</label>
               <input
                 type="email"
                 placeholder="Enter your email"
-                className="p-2 rounded-xl border border-gray-200 focus:ring-2 focus:ring-amber-400 outline-none transition"
+                className="p-2 corner-squircle rounded-[50px] border border-gray-200 focus:ring-2 focus:ring-amber-400 outline-none transition"
               />
             </div>
 
             <div className="flex flex-col">
-              <label className="text-sm text-gray-600 mb-2">Message</label>
+              <label className="text-sm text-gray-600 mb-1">Message</label>
               <textarea
                 rows="6"
                 placeholder="Write your message..."
-                className="p-2 rounded-xl border border-gray-200 focus:ring-2 focus:ring-amber-400 outline-none transition resize-none"
+                className="p-2 corner-squircle rounded-[40px] border border-gray-200 focus:ring-2 focus:ring-amber-400 outline-none transition resize-none"
               ></textarea>
             </div>
 
@@ -325,7 +326,7 @@ function Home() {
               whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.97 }}
               transition={{ type: "spring", stiffness: 300, damping: 20 }}
-              className="w-full mt-4 bg-(--brand-primary)  text-white p-2 rounded-xl font-semibold shadow-md hover:bg-(--brand-primary-dark)"
+              className="w-full corner-squircle rounded-[50px] mt-4 bg-(--brand-primary)  text-white p-2  font-semibold shadow-md hover:bg-(--brand-primary-dark)"
             >
               Send Message
             </motion.button>
