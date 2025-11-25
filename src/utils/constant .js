@@ -39,13 +39,23 @@ const projects = [
     title: "Ink&Muse",
     image: "/project/inkandmuse.png",
     liveLink: "https://inkandmuse.vercel.app",
-    techStack: ["React", "Tailwind CSS", "Node.js", "MongoDB"],
+    techStackIcons: [
+      "logos:react",
+      "logos:tailwindcss-icon",
+      "logos:nodejs",
+      "logos:mongodb-icon",
+    ],
   },
   {
     title: "Selllin",
     image: "/project/selllin.png",
     liveLink: "https://selllin.com",
-    techStack: ["Next.js", "Tailwind CSS", "Node.js", "MongoDB"],
+    techStackIcons: [
+      "skill-icons:nextjs-dark",
+      "logos:tailwindcss-icon",
+      "logos:nodejs",
+      "logos:mongodb-icon",
+    ],
   },
 ];
 
