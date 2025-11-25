@@ -1,5 +1,5 @@
 import { Icon } from "@iconify/react";
-import React from "react";
+import React, { useEffect } from "react";
 
 export default function Skill({ skill }) {
   const [progress, setProgress] = React.useState(0);
@@ -7,7 +7,7 @@ export default function Skill({ skill }) {
   const stroke = 4;
   const circumference = radius * 2 * Math.PI;
 
-  React.useEffect(() => {
+  useEffect(() => {
     const timer = setTimeout(() => {
       setProgress(skill.level);
     }, 100);

@@ -3,6 +3,7 @@ import HeroImg from "../assets/hero-img.jpg";
 import { Icon } from "@iconify/react";
 import Skill from "../components/Skill";
 import { skills, projects } from "../utils/constant ";
+import { ReactTyped } from "react-typed";
 
 function Home() {
   const categories = ["All", "Frontend", "Backend", "Database"];
@@ -10,15 +11,27 @@ function Home() {
 
   return (
     <div className="bg-amber-100">
-      {/* HERO SECTION */}
       <section
         id="home"
         className="flex flex-col-reverse md:flex-row w-full min-h-[750px] px-10 justify-center items-center bg-linear-to-b from-white bg-amber-100"
       >
         <div className="space-y-2 max-w-lg">
-          <p className="text-2xl">Hi, I'm</p>
+          <p className="text-3xl">Hi, I'm</p>
           <p className="text-5xl font-semibold">Ravi Kourav</p>
-          <p className="text-2xl">Full Stack Developer</p>
+          <p className="text-3xl text-black first-letter:text-(--brand-primary)">
+            <ReactTyped
+              strings={[
+                "Full Stack Developer",
+                "MERN Developer",
+                "Frontend Developer",
+                "Backend Developer",
+                "UI / UX Enthusiast",
+              ]}
+              typeSpeed={80}
+              backSpeed={40}
+              loop
+            />
+          </p>
           <p className="text-gray-600 text-sm leading-relaxed">
             Building fast, scalable, and modern web applications. Creating
             interfaces that look great and perform even better. Driven by
@@ -27,7 +40,7 @@ function Home() {
           </p>
           <div className="pt-4 pb-3">
             <a
-              href="/resume.pdf"
+              href="/Resume.pdf"
               download="Ravi-Kourav-Resume.pdf"
               className="bg-(--brand-primary) text-white px-4 py-2 rounded-lg hover:bg-(--brand-primary-dark) transition"
             >
@@ -46,7 +59,6 @@ function Home() {
         </div>
       </section>
 
-      {/* SKILLS SECTION */}
       <section
         id="tech-stack"
         className="w-full py-10 bg-linear-to-b from-amber-100 via-white to-white flex flex-col items-center"
@@ -82,7 +94,6 @@ function Home() {
         </div>
       </section>
 
-      {/* PROJECTS SECTION */}
       <section
         id="projects"
         className="w-full pt-10 pb-15 bg-linear-to-b from-white to-amber-100 flex flex-col items-center"
@@ -118,7 +129,6 @@ function Home() {
         </div>
       </section>
 
-      {/* CONTACT SECTION */}
       <section
         id="contact"
         className="w-full py-24 bg-linear-to-b from-amber-100 to-white flex justify-center items-start px-10"
