@@ -7,11 +7,15 @@ import { skills, projects } from "../utils/constant ";
 import { ReactTyped } from "react-typed";
 
 function Home() {
+  //checking fro cornershape support
+  const supportsCornerShape = CSS.supports("corner-shape", "squircle");
+
   const categories = ["All", "Frontend", "Backend", "Database"];
   const [activeCategory, setActiveCategory] = useState("All");
 
   return (
     <div className="bg-amber-100">
+      {/*Hero Section*/}
       <section
         id="home"
         className="flex flex-col-reverse md:flex-row w-full min-h-[750px] px-10 justify-center items-center bg-linear-to-b from-white bg-amber-100"
@@ -55,7 +59,11 @@ function Home() {
               <a
                 href="/Resume.pdf"
                 download="Ravi-Kourav-Resume.pdf"
-                className="bg-(--brand-primary) corner-squircle rounded-[50px] text-white px-4 py-2 hover:bg-(--brand-primary-dark) transition"
+                className={`bg-(--brand-primary) ${
+                  supportsCornerShape
+                    ? "corner-squircle rounded-[35px] "
+                    : "rounded-xl"
+                } text-white px-4 py-2 hover:bg-(--brand-primary-dark)`}
               >
                 Download Resume
               </a>
@@ -122,7 +130,11 @@ function Home() {
             <button
               key={cat}
               onClick={() => setActiveCategory(cat)}
-              className={`px-4 py-2 corner-squircle rounded-[50px] transition ${
+              className={`px-4 py-2 ${
+                supportsCornerShape
+                  ? "corner-squircle rounded-[35px] "
+                  : "rounded-xl"
+              } transition ${
                 activeCategory === cat
                   ? "bg-(--brand-primary) text-white"
                   : "bg-gray-200 text-gray-700 hover:bg-gray-300"
@@ -185,7 +197,11 @@ function Home() {
               }}
               transition={{ type: "spring", stiffness: 150, damping: 12 }}
               whileHover={{ y: -8, scale: 1.02 }}
-              className="max-w-[350px] bg-white corner-squircle rounded-[60px] shadow-lg hover:shadow-2xl cursor-pointer overflow-hidden group"
+              className={`max-w-[350px] bg-white ${
+                supportsCornerShape
+                  ? "corner-squircle rounded-[55px]"
+                  : "rounded-3xl"
+              } shadow-lg hover:shadow-2xl cursor-pointer overflow-hidden group`}
             >
               <div className="w-full h-60 sm:h-64 lg:h-72 overflow-hidden relative p-2">
                 <img
@@ -294,14 +310,22 @@ function Home() {
               stiffness: 150,
               damping: 12,
             }}
-            className="bg-white corner-squircle rounded-[60px] shadow-2xl p-6 space-y-2"
+            className={`bg-white ${
+              supportsCornerShape
+                ? "corner-squircle rounded-[50px]"
+                : "rounded-3xl"
+            } shadow-2xl p-6 space-y-2`}
           >
             <div className="flex flex-col max-w-2xl">
               <label className="text-sm text-gray-600 mb-1">Your Name</label>
               <input
                 type="text"
                 placeholder="Enter your name"
-                className="p-2 corner-squircle rounded-[50px] border border-gray-200 focus:ring-2 focus:ring-amber-400 outline-none transition"
+                className={`p-2 ${
+                  supportsCornerShape
+                    ? "corner-squircle rounded-[35px] "
+                    : "rounded-xl"
+                } border border-gray-200 focus:ring-2 focus:ring-amber-400 outline-none transition`}
               />
             </div>
             <div className="flex flex-col">
@@ -309,7 +333,11 @@ function Home() {
               <input
                 type="email"
                 placeholder="Enter your email"
-                className="p-2 corner-squircle rounded-[50px] border border-gray-200 focus:ring-2 focus:ring-amber-400 outline-none transition"
+                className={`p-2 ${
+                  supportsCornerShape
+                    ? "corner-squircle rounded-[35px] "
+                    : "rounded-xl"
+                } border border-gray-200 focus:ring-2 focus:ring-amber-400 outline-none transition`}
               />
             </div>
 
@@ -318,7 +346,11 @@ function Home() {
               <textarea
                 rows="6"
                 placeholder="Write your message..."
-                className="p-2 corner-squircle rounded-[40px] border border-gray-200 focus:ring-2 focus:ring-amber-400 outline-none transition resize-none"
+                className={`p-2 ${
+                  supportsCornerShape
+                    ? "corner-squircle rounded-[35px] "
+                    : "rounded-xl"
+                } border border-gray-200 focus:ring-2 focus:ring-amber-400 outline-none transition resize-none`}
               ></textarea>
             </div>
 
@@ -326,7 +358,11 @@ function Home() {
               whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.97 }}
               transition={{ type: "spring", stiffness: 300, damping: 20 }}
-              className="w-full corner-squircle rounded-[50px] mt-4 bg-(--brand-primary)  text-white p-2  font-semibold shadow-md hover:bg-(--brand-primary-dark)"
+              className={`w-full ${
+                supportsCornerShape
+                  ? "corner-squircle rounded-[35px] "
+                  : "rounded-xl"
+              } mt-4 bg-(--brand-primary)  text-white p-2  font-semibold shadow-md hover:bg-(--brand-primary-dark)`}
             >
               Send Message
             </motion.button>

@@ -1,10 +1,12 @@
 import { Icon } from "@iconify/react";
-import React, { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 export default function Skill({ skill }) {
-  const [progress, setProgress] = React.useState(0);
+  const [progress, setProgress] = useState(0);
+
   const radius = 40;
   const stroke = 4;
+
   const circumference = radius * 2 * Math.PI;
 
   useEffect(() => {
@@ -14,6 +16,7 @@ export default function Skill({ skill }) {
     return () => clearTimeout(timer);
   }, [skill.level]);
 
+  // example progress = (90 / 100 = 0.9) * 100(circe)
   const strokeDashoffset = circumference - (progress / 100) * circumference;
 
   return (
